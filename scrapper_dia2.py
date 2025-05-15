@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
-import undetected_chromedriver as uc
+from selenium.webdriver.chrome.service import Service
 import pandas as pd
 import time
 
@@ -23,15 +23,12 @@ def limpiar_precio_litro(texto):
         return None
 
 def get_productos():
-    options = uc.ChromeOptions()
-    options.add_argument("--headless=new")
+    options = Options()
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--disable-gpu")
-    options.add_argument("--disable-software-rasterizer")
-    options.add_argument("--window-size=1280,720")
+    options.add_argument("--headless=new")  # activar en Railway
 
-    driver = uc.Chrome(options=options, headless=True)
+    driver = webdriver.Chrome(options=options)
 
     total_paginas = 3
     nombres, precios, precios_por_litro, descuentos, imagenes = [], [], [], [], []
