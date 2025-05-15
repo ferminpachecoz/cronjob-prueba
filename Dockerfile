@@ -31,5 +31,6 @@ COPY . .
 # Instalar dependencias Python
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Ejecutar el archivo principal
-CMD ["python", "mongo_insert_bonprix.py"]
+COPY entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
+CMD ["./entrypoint.sh"]
