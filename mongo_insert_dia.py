@@ -13,6 +13,10 @@ from pymongo import MongoClient
 # Cargar productos del scrapper
 df = get_productos()
 
+if df.empty:
+    print("⚠️ No se extrajeron productos. Posible error en el scraping. Abortando inserción.")
+    exit()
+
 # Conexión a MongoDB Atlas
 uri = "mongodb+srv://ferminpz:pacheco2002@cluster0.q9s2nsn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 client = MongoClient(uri)
