@@ -7,7 +7,7 @@ Created on Tue May 13 21:16:53 2025
 
 # -*- coding: utf-8 -*-
 from datetime import datetime
-from scrapper_dia import get_productos
+from scrapper_dia2 import get_productos
 from pymongo import MongoClient
 
 # Cargar productos del scrapper
