@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+import undetected_chromedriver as uc
 import pandas as pd
 import time
 
@@ -41,15 +42,15 @@ def scroll_completo(driver):
 
 
 def get_productos():
-    options = Options()
+    options = uc.ChromeOptions()
     options.add_argument("--headless=new")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-gpu")
     options.add_argument("--disable-software-rasterizer")
-    options.add_argument("--window-size=1920,1080")
+    options.add_argument("--window-size=1280,720")
 
-    driver = webdriver.Chrome(options=options)
+    driver = uc.Chrome(options=options, headless=True)
 
     nombres = []
     precios = []
