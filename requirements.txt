@@ -1,4 +1,3 @@
 selenium==4.20.0
 pymongo==4.7.2
 pandas
-undetected-chromedriver==3.5.5
