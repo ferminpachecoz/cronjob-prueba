@@ -14,7 +14,7 @@ RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.d
     rm google-chrome-stable_current_amd64.deb
 
 # Instalar ChromeDriver compatible (versión fija conocida que funciona bien)
-RUN wget -O /tmp/chromedriver.zip https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/124.0.6367.60/linux64/chromedriver-linux64.zip && \
+RUN wget -O /tmp/chromedriver.zip https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/136.0.7103.94/linux64/chromedriver-linux64.zip && \
     unzip /tmp/chromedriver.zip -d /usr/local/bin/ && \
     mv /usr/local/bin/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver && \
     chmod +x /usr/local/bin/chromedriver && \
